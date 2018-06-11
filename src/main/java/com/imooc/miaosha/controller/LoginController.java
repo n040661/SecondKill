@@ -17,27 +17,30 @@ import com.imooc.miaosha.vo.LoginVo;
 
 @Controller
 @RequestMapping("/login")
-public class LoginController {
+public class LoginController
+{
 
-	private static Logger log = LoggerFactory.getLogger(LoginController.class);
-	
-	@Autowired
-	MiaoshaUserService userService;
-	
-	@Autowired
-	RedisService redisService;
-	
+    private static Logger log = LoggerFactory.getLogger(LoginController.class);
+
+    @Autowired
+    MiaoshaUserService userService;
+
+    @Autowired
+    RedisService redisService;
+
     @RequestMapping("/to_login")
-    public String toLogin() {
+    public String toLogin()
+    {
         return "login";
     }
-    
+
     @RequestMapping("/do_login")
     @ResponseBody
-    public Result<String> doLogin(HttpServletResponse response, @Valid LoginVo loginVo) {
-    	log.info(loginVo.toString());
-    	//登录
-    	String token = userService.login(response, loginVo);
-    	return Result.success(token);
+    public Result<String> doLogin(HttpServletResponse response, @Valid LoginVo loginVo)
+    {
+        log.info(loginVo.toString());
+        //登录
+        String token = userService.login(response, loginVo);
+        return Result.success(token);
     }
 }

@@ -8,8 +8,11 @@ import java.lang.annotation.Target;
 
 @Retention(RUNTIME)
 @Target(METHOD)
-public @interface AccessLimit {
-	int seconds();
-	int maxCount();
-	boolean needLogin() default true;
+public @interface AccessLimit
+{
+    int seconds();
+
+    int maxCount();
+
+    boolean needLogin() default true;
 }

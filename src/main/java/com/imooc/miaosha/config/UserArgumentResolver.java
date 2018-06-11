@@ -13,19 +13,24 @@ import com.imooc.miaosha.domain.MiaoshaUser;
 import com.imooc.miaosha.service.MiaoshaUserService;
 
 @Service
-public class UserArgumentResolver implements HandlerMethodArgumentResolver {
+public class UserArgumentResolver implements HandlerMethodArgumentResolver
+{
 
-	@Autowired
-	MiaoshaUserService userService;
-	
-	public boolean supportsParameter(MethodParameter parameter) {
-		Class<?> clazz = parameter.getParameterType();
-		return clazz==MiaoshaUser.class;
-	}
+    @Autowired
+    MiaoshaUserService userService;
 
-	public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
-			NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-		return UserContext.getUser();
-	}
+    @Override
+    public boolean supportsParameter(MethodParameter parameter)
+    {
+        Class<?> clazz = parameter.getParameterType();
+        return clazz == MiaoshaUser.class;
+    }
+
+    @Override
+    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
+                                  NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception
+    {
+        return UserContext.getUser();
+    }
 
 }

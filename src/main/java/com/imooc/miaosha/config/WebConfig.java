@@ -11,22 +11,25 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.imooc.miaosha.access.AccessInterceptor;
 
 @Configuration
-public class WebConfig  extends WebMvcConfigurerAdapter{
-	
-	@Autowired
-	UserArgumentResolver userArgumentResolver;
-	
-	@Autowired
-	AccessInterceptor accessInterceptor;
-	
-	@Override
-	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-		argumentResolvers.add(userArgumentResolver);
-	}
-	
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(accessInterceptor);
-	}
-	
+public class WebConfig extends WebMvcConfigurerAdapter
+{
+
+    @Autowired
+    UserArgumentResolver userArgumentResolver;
+
+    @Autowired
+    AccessInterceptor accessInterceptor;
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers)
+    {
+        argumentResolvers.add(userArgumentResolver);
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry)
+    {
+        registry.addInterceptor(accessInterceptor);
+    }
+
 }

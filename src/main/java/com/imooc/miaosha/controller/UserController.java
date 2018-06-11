@@ -13,18 +13,20 @@ import com.imooc.miaosha.service.MiaoshaUserService;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController
+{
 
-	@Autowired
-	MiaoshaUserService userService;
-	
-	@Autowired
-	RedisService redisService;
-	
+    @Autowired
+    MiaoshaUserService userService;
+
+    @Autowired
+    RedisService redisService;
+
     @RequestMapping("/info")
     @ResponseBody
-    public Result<MiaoshaUser> info(Model model,MiaoshaUser user) {
+    public Result<MiaoshaUser> info(Model model, MiaoshaUser user)
+    {
         return Result.success(user);
     }
-    
+
 }
