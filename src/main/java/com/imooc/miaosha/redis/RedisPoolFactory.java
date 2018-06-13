@@ -17,7 +17,7 @@ public class RedisPoolFactory
         poolConfig.setMaxIdle(500);
         poolConfig.setMaxTotal(1000);
         poolConfig.setMaxWaitMillis(500 * 1000);
-        JedisPool jp = new JedisPool(poolConfig, "192.168.1.104", 6379,
+        JedisPool jp = new JedisPool(poolConfig, "188.166.175.32", 6379,
                 10 * 1000);
         return jp;
     }

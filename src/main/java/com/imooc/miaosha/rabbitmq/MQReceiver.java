@@ -1,11 +1,5 @@
 package com.imooc.miaosha.rabbitmq;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.imooc.miaosha.domain.MiaoshaOrder;
 import com.imooc.miaosha.domain.MiaoshaUser;
 import com.imooc.miaosha.redis.RedisService;
@@ -13,6 +7,11 @@ import com.imooc.miaosha.service.GoodsService;
 import com.imooc.miaosha.service.MiaoshaService;
 import com.imooc.miaosha.service.OrderService;
 import com.imooc.miaosha.vo.GoodsVo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class MQReceiver
@@ -55,6 +54,7 @@ public class MQReceiver
         //减库存 下订单 写入秒杀订单
         miaoshaService.miaosha(user, goods);
     }
+
 
 //		@RabbitListener(queues=MQConfig.QUEUE)
 //		public void receive(String message) {

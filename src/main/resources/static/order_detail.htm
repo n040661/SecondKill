@@ -4,10 +4,10 @@
     <title>订单详情</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!-- jquery -->
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <!-- jquery-validator -->
     <script type="text/javascript" src="/jquery-validation/jquery.validate.min.js"></script>
     <script type="text/javascript" src="/jquery-validation/localization/messages_zh.min.js"></script>
@@ -23,38 +23,30 @@
             width: 100%;
         }
 
-        body {
-            background: url('/img/bg2.jpg') no-repeat;
-            background-size: 100% 100%;
-        }
-
-        #goodslist td {
-            border-top: 1px solid #39503f61;
-        }
     </style>
 </head>
 <body>
-<div class="panel panel-default" style="height:100%;background-color:rgba(222,222,222,0.8)">
-    <div class="panel-heading">秒杀订单详情</div>
+<div class="panel panel-default">
+    <h2 align="center">秒杀订单详情</h2>
     <table class="table" id="goodslist">
         <tr>
-            <td>商品名称</td>
+            <th scope="row">商品名称</th>
             <td colspan="3" id="goodsName"></td>
         </tr>
         <tr>
-            <td>商品图片</td>
+            <th scope="row">商品图片</th>
             <td colspan="2"><img id="goodsImg" width="200" height="200"/></td>
         </tr>
         <tr>
-            <td>订单价格</td>
+            <th scope="row">订单价格</th>
             <td colspan="2" id="orderPrice"></td>
         </tr>
         <tr>
-            <td>下单时间</td>
+            <th scope="row">下单时间</th>
             <td id="createDate" colspan="2"></td>
         </tr>
         <tr>
-            <td>订单状态</td>
+            <th scope="row">订单状态</th>
             <td id="orderStatus">
             </td>
             <td>
@@ -62,11 +54,11 @@
             </td>
         </tr>
         <tr>
-            <td>收货人</td>
+            <th scope="row">收货人</th>
             <td colspan="2">XXX 18812341234</td>
         </tr>
         <tr>
-            <td>收货地址</td>
+            <th scope="row">收货地址</th>
             <td colspan="2">北京市昌平区回龙观龙博一区</td>
         </tr>
     </table>
