@@ -75,7 +75,7 @@ public class MiaoshaController implements InitializingBean
 
     @RequestMapping(value = "/reset", method = RequestMethod.GET)
     @ResponseBody
-    public Result<Boolean> reset(Model model)
+    public Result<Boolean> reset()
     {
         List<GoodsVo> goodsList = goodsService.listGoodsVo();
         for (GoodsVo goods : goodsList)
